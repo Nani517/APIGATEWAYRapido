@@ -6,7 +6,7 @@ spring:
   cloud:
     gateway:
       server:
-        webflux:
+        webmvc:
           routes:
             - id: customer-service
               uri: https://customerservice-1-atyl.onrender.com
@@ -27,7 +27,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,gateway
-  endpoint:
-    gateway:
-      access: read-only
+        include: health,info

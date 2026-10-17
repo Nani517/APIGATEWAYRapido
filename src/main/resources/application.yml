@@ -1,4 +1,4 @@
-```yaml
+
 spring:
   application:
     name: ola-spring-cloud-gateway
@@ -31,4 +31,3 @@ management:
   endpoint:
     gateway:
       access: read-only
-```

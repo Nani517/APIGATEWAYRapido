@@ -1,21 +1,24 @@
+```yaml
 spring:
   application:
     name: ola-spring-cloud-gateway
 
   cloud:
     gateway:
-      routes:
-        - id: customer-service
-          uri: https://customerservice-1-atyl.onrender.com
-          predicates:
-            - Path=/customer/**
-          filters:
-            - StripPrefix=1
+      server:
+        webflux:
+          routes:
+            - id: customer-service
+              uri: https://customerservice-1-atyl.onrender.com
+              predicates:
+                - Path=/customer/**
+              filters:
+                - StripPrefix=1
 
-        - id: rider-service
-          uri: https://riderservice-ry6k.onrender.com
-          predicates:
-            - Path=/rider/**
+            - id: rider-service
+              uri: https://riderservice-ry6k.onrender.com
+              predicates:
+                - Path=/rider/**
 
 server:
   port: ${PORT:8085}
@@ -28,3 +31,4 @@ management:
   endpoint:
     gateway:
       access: read-only
+```
